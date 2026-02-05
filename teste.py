@@ -48,7 +48,7 @@ def check_password():
                 st.session_state["password_correct"] = True
                 st.rerun()
             else:
-                st.error("❌ Senha incorreta, camarada.")
+                st.error("❌ Senha incorreta Insira credenciais válidas.")
                 st.session_state["password_correct"] = False
         return False
     return st.session_state["password_correct"]
@@ -143,7 +143,7 @@ if check_password():
                         status = "EM ANÁLISE"
                         if hoje >= dt_limite:
                             status = "QUESTIONADO"
-                            corpo = f"Olá {nome},\n\nO prazo de 60 dias para o estorno expirou. Por favor, entre em contato para abertura de chamado externo."
+                            corpo = f"Olá {nome},\n\nO prazo de 60 dias para o estorno expirou. Caso a devolução não tenha ocorrido, entre em contato através do número 0800 943 8585 para abertura de chamado externo."
                         else:
                             corpo = f"Olá {nome},\n\nSeu chamado {ritm} foi registrado com sucesso. O prazo final para análise é {dt_lim_str}."
                         

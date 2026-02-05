@@ -146,9 +146,9 @@ class AppEmail(ctk.CTk):
                 for p in pendentes:
                     id_db, nome, email, ritm, dt_limite_str = p
                     if hoje >= datetime.strptime(dt_limite_str, "%d/%m/%Y"):
-                        corpo = (f"Olá {nome.split()[0]},\n\nO prazo de 60 dias para o estorno do chamado {ritm} expirou.\n\n"
-                                 f"Caso o valor NÃO tenha sido creditado, por favor, entre em contato conosco "
-                                 f"para abertura de chamado externo.")
+                        corpo = (f"Olá {nome.split()[0]},\n\nOlá verificamos que prazo de 60 dias para o estorno do chamado {ritm} expirou.\n\n"
+                                 f"Caso o valor NÃO tenha sido creditado, por favor, entre em contato conosco através do número 0800 943 8585 "
+                                 f"para abertura de chamado externo. \n atenciosamente - Time Neon")
                         if enviar_email(email, "Atualização: Prazo de Estorno - Neon", corpo):
                             cursor.execute("UPDATE contatos SET status = 'QUESTIONADO' WHERE id = ?", (id_db,))
                 conn.commit()
