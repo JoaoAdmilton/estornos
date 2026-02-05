@@ -1,0 +1,4 @@
+senha.env
+neon_web.db
+__pycache__/
+.streamlit/
